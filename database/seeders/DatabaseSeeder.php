@@ -1,5 +1,6 @@
 <?php
 
+// I HATE U
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
