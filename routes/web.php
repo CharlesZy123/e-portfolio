@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage');
+});
+
+Auth::routes();
+
+Route::resource('/admin', AdminController::class);
+
+Route::middleware(['auth', 'check.usertype'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
