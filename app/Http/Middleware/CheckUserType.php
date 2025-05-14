@@ -14,7 +14,7 @@ class CheckUserType
 
         if ($user && $user->usertype === 0) {
             // Redirect to the 'admin.index' named route
-            return redirect()->route('admin.index');
+            return redirect()->route('administrator.index');
         }
 
         return $next($request);

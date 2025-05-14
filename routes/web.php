@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/admin', AdminController::class);
+Route::resource('administrator', AdminController::class);
 
 Route::middleware(['auth', 'check.usertype'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
